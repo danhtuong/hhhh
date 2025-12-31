@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Chúc mừng năm mới 2026 ✨</title>
+    <style>
+        :root {
+            --bg1: #05050a;
+            --bg2: #0b0b18;
+            --gold: #ffd36b;
+            --pink: #ff7bd1;
+            --cyan: #70e7ff;
+            --text: #ffffff;
+        }
+
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            overflow: hidden;
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+            color: var(--text);
+            background:
+                radial-gradient(1200px 800px at 20% 20%, #1b1248 0%, transparent 60%),
+                radial-gradient(1000px 700px at 80% 30%, #1a3b4b 0%, transparent 55%),
+                radial-gradient(900px 600px at 50% 80%, #3b1a2f 0%, transparent 60%),
+                linear-gradient(180deg, var(--bg1), var(--bg2));
+        }
+
+        /* Sparkle overlay */
+        .sparkle-overlay {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            mix-blend-mode: screen;
+            opacity: .9;
+            background:
+                radial-gradient(2px 2px at 10% 20%, rgba(255, 255, 255, .8) 40%, transparent 60%),
+                radial-gradient(2px 2px at 40% 60%, rgba(255, 255, 255, .7) 40%, transparent 60%),
+                radial-gradient(1.5px 1.5px at 70% 30%, rgba(255, 255, 255, .8) 40%, transparent 60%),
+                radial-gradient(1.5px 1.5px at 85% 75%, rgba(255, 255, 255, .6) 40%, transparent 60%),
+                radial-gradient(2px 2px at 25% 85%, rgba(255, 255, 255, .65) 40%, transparent 60%),
+                radial-gradient(1.5px 1.5px at 55% 15%, rgba(255, 255, 255, .75) 40%, transparent 60%);
+            animation: twinkle 2.2s infinite ease-in-out alternate;
+            filter: blur(.2px);
+        }
+
+        @keyframes twinkle {
+            0% {
+                transform: translateY(0);
+                opacity: .55;
+                filter: blur(.4px) brightness(1);
+            }
+
+            100% {
+                transform: translateY(-6px);
+                opacity: 1;
+                filter: blur(.1px) brightness(1.25);
+            }
+        }
+
+        /* Header */
+        .center {
+            position: fixed;
+            inset: 0;
+            display: grid;
+            place-items: center;
+            text-align: center;
+            pointer-events: none;
+        }
+
+        .title {
+            pointer-events: none;
+            padding: 18px 22px;
+            border-radius: 18px;
+            backdrop-filter: blur(10px);
+            background: rgba(0, 0, 0, .25);
+            border: 1px solid rgba(255, 255, 255, .12);
+            box-shadow:
+                0 10px 35px rgba(0, 0, 0, .35),
+                0 0 40px rgba(112, 231, 255, .08);
+        }
+
+        h1 {
+            margin: 0 0 6px;
+            font-size: clamp(26px, 4vw, 48px);
+            letter-spacing: .5px;
+            text-shadow: 0 0 18px rgba(255, 211, 107, .25), 0 0 30px rgba(112, 231, 255, .12);
+            background: linear-gradient(90deg, var(--gold), #fff, var(--cyan));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, .12));
+        }
+
+        .subtitle {
+            margin: 0;
+            font-size: clamp(13px, 2vw, 16px);
+            opacity: .9;
+            text-shadow: 0 0 12px rgba(255, 255, 255, .15);
+        }
+
+        /* Falling wishes */
+        #wishes {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+        }
+
+        .wish {
+            position: absolute;
+            top: -20vh;
+            white-space: nowrap;
+            padding: 8px 12px;
+            border-radius: 999px;
+            font-weight: 600;
+            letter-spacing: .2px;
+
+            background: linear-gradient(90deg, rgba(255, 211, 107, .18), rgba(112, 231, 255, .14), rgba(255, 123, 209, .14));
+            border: 1px solid rgba(255, 255, 255, .16);
+
+            text-shadow: 0 0 10px rgba(255, 255, 255, .25);
+            box-shadow:
+                0 10px 28px rgba(0, 0, 0, .25),
+                0 0 22px rgba(255, 211, 107, .08),
+                0 0 18px rgba(112, 231, 255, .08);
+
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, .12));
+            animation: fall linear forwards;
+        }
+
+        /* Extra sparkle particles (small dots) */
+        #particles {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+        }
+
+        .p {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, .9);
+            box-shadow: 0 0 8px rgba(255, 255, 255, .8), 0 0 18px rgba(112, 231, 255, .25);
+            animation: drift linear forwards;
+            opacity: .95;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(135vh) rotate(var(--rot));
+                opacity: 0.05;
+            }
+        }
+
+        @keyframes drift {
+            0% {
+                transform: translateY(110vh) translateX(0);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: .95;
+            }
+
+            100% {
+                transform: translateY(-20vh) translateX(var(--dx));
+                opacity: 0;
+            }
+        }
+
+        /* Footer controls */
+        .controls {
+            position: fixed;
+            left: 14px;
+            bottom: 14px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            padding: 10px 12px;
+            border-radius: 14px;
+            background: rgba(0, 0, 0, .25);
+            border: 1px solid rgba(255, 255, 255, .12);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .35);
+            pointer-events: auto;
+            user-select: none;
+        }
+
+        .controls label {
+            font-size: 12px;
+            opacity: .9;
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .controls input[type="range"] {
+            width: 120px;
+            accent-color: var(--gold);
+        }
+
+        .btn {
+            cursor: pointer;
+            border: 1px solid rgba(255, 255, 255, .18);
+            background: rgba(255, 255, 255, .06);
+            color: #fff;
+            padding: 8px 10px;
+            border-radius: 12px;
+            font-weight: 600;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, .25);
+        }
+
+        .btn:active {
+            transform: translateY(1px);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .wish,
+            .p,
+            .sparkle-overlay {
+                animation: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wishes"></div>
+    <div id="particles"></div>
+
+    <div class="center">
+        <div class="title">
+            <h1>Chúc mừng năm mới 2026 ✨</h1>
+            <p class="subtitle">Chúc bạn một năm an khang – hạnh phúc – bứt phá!</p>
+        </div>
+    </div>
+
+    <div class="sparkle-overlay"></div>
+
+    <div class="controls">
+        <button class="btn" id="toggle">Tạm dừng</button>
+        <label>
+            Mật độ chữ
+            <input id="rate" type="range" min="1" max="10" value="6">
+        </label>
+        <label>
+            Lấp lánh
+            <input id="spark" type="range" min="1" max="10" value="7">
+        </label>
+    </div>
+
+    <script>
+        // Các câu chúc Tết (có thể thêm/bớt tùy ý)
+        const WISHES = [
+            "Chúc mừng năm mới 2026!",
+            "An khang thịnh vượng ✨",
+            "Vạn sự như ý 🌸",
+            "Sức khỏe dồi dào 💪",
+            "Tài lộc đầy nhà 💰",
+            "Hạnh phúc ngập tràn 💛",
+            "Bình an mỗi ngày 🕊️",
+            "Thành công rực rỡ 🌟",
+            "Học tập bứt phá 📚",
+            "Công việc hanh thông 🚀",
+            "Gia đình sum vầy 🧧",
+            "Tiền vô như nước 💦",
+            "Đắc tài đắc lộc 🎉",
+            "Mọi điều tốt lành 🌈"
+        ];
+
+        const wishesLayer = document.getElementById("wishes");
+        const particlesLayer = document.getElementById("particles");
+        const rate = document.getElementById("rate");
+        const spark = document.getElementById("spark");
+        const toggleBtn = document.getElementById("toggle");
+
+        let running = true;
+        let wishTimer = null;
+        let particleTimer = null;
+
+        function rand(min, max) { return Math.random() * (max - min) + min; }
+        function pick(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+
+        function spawnWish() {
+            const el = document.createElement("div");
+            el.className = "wish";
+            el.textContent = pick(WISHES);
+
+            const left = rand(2, 92);             // %
+            const size = rand(14, 22);            // px
+            const duration = rand(4.5, 9.5);      // seconds
+            const rot = `${rand(-18, 18)}deg`;    // subtle rotation
+            const blur = rand(0, 0.4);
+
+            el.style.left = left + "vw";
+            el.style.fontSize = size + "px";
+            el.style.animationDuration = duration + "s";
+            el.style.setProperty("--rot", rot);
+            el.style.filter = `drop-shadow(0 0 10px rgba(255,255,255,.12)) blur(${blur}px)`;
+
+            // sắc độ lấp lánh ngẫu nhiên
+            const hue = Math.floor(rand(180, 330));
+            el.style.boxShadow = `
+        0 10px 28px rgba(0,0,0,.25),
+        0 0 18px hsla(${hue}, 95%, 70%, .10),
+        0 0 22px rgba(255,211,107,.08),
+        0 0 18px rgba(112,231,255,.08)
+      `;
+
+            wishesLayer.appendChild(el);
+            el.addEventListener("animationend", () => el.remove());
+        }
+
+        function spawnParticle() {
+            const p = document.createElement("div");
+            p.className = "p";
+            const left = rand(0, 100);
+            const top = rand(0, 100);
+
+            const duration = rand(3.5, 7.5);
+            const dx = `${rand(-40, 40)}vw`;
+            const size = rand(1.2, 2.6);
+
+            p.style.left = left + "vw";
+            p.style.top = top + "vh";
+            p.style.width = size + "px";
+            p.style.height = size + "px";
+            p.style.animationDuration = duration + "s";
+            p.style.setProperty("--dx", dx);
+
+            // lấp lánh theo mức slider
+            const intensity = Number(spark.value); // 1..10
+            p.style.opacity = String(rand(0.35, 0.95));
+            p.style.boxShadow = `0 0 ${2 + intensity}px rgba(255,255,255,.85),
+                           0 0 ${6 + intensity * 2}px rgba(112,231,255,.22)`;
+
+            particlesLayer.appendChild(p);
+            p.addEventListener("animationend", () => p.remove());
+        }
+
+        function start() {
+            stop();
+
+            // mật độ chữ: 1..10 => khoảng spawn 900..180 ms
+            const wishInterval = 1000 - (Number(rate.value) * 82);
+            const particleInterval = 260 - (Number(spark.value) * 12);
+
+            wishTimer = setInterval(() => { if (running) spawnWish(); }, wishInterval);
+            particleTimer = setInterval(() => { if (running) spawnParticle(); }, Math.max(60, particleInterval));
+
+            // bắn sẵn vài cái để đẹp ngay
+            for (let i = 0; i < 10; i++) spawnParticle();
+            for (let i = 0; i < 4; i++) spawnWish();
+        }
+
+        function stop() {
+            if (wishTimer) clearInterval(wishTimer);
+            if (particleTimer) clearInterval(particleTimer);
+            wishTimer = null;
+            particleTimer = null;
+        }
+
+        toggleBtn.addEventListener("click", () => {
+            running = !running;
+            toggleBtn.textContent = running ? "Tạm dừng" : "Chạy tiếp";
+        });
+
+        rate.addEventListener("input", start);
+        spark.addEventListener("input", start);
+
+        // Click nền để "bùng lấp lánh"
+        document.addEventListener("click", (e) => {
+            if (e.target.closest(".controls")) return;
+            for (let i = 0; i < 30; i++) spawnParticle();
+            for (let i = 0; i < 3; i++) spawnWish();
+        });
+
+        start();
+    </script>
+</body>
+
+</html>
